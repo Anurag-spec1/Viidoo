@@ -2,62 +2,118 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:background="@drawable/bgt"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple_500"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
     tools:context=".Login">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="32dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_logo_desc"
+            android:scaleType="fitXY"
+            android:src="@drawable/videocall" />
+    </androidx.cardview.widget.CardView>
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="38sp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/setup_profile"
         android:textColor="@color/white"
+        android:textSize="28sp"
         android:textStyle="bold"
-        android:text="Set Up Your Profile" />
+        app:fontFamily="@font/main_font" />
 
-
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:hint="Username"
-        android:textColor="#D1E629"
-        android:id="@+id/userId"/>
-    <CheckBox
+        android:layout_marginBottom="16dp"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:hintTextColor="@color/white"
+        app:startIconDrawable="@drawable/ic_person"
+        app:startIconTint="@color/white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/username"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_60" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/remme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Remember Me"
-        android:textColor="#01115F"
-        android:textSize="18sp"
-        android:id="@+id/remme"/>
+        android:layout_marginBottom="24dp"
+        android:text="@string/remember_me"
+        android:textColor="@color/white"
+        app:buttonTint="@color/white"
+        app:useMaterialThemeColors="false" />
 
-<!--    <Button-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Login"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:id="@+id/Login"/>-->
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="wrap_content"
-        android:layout_marginTop="20dp"
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/Login"
-        app:cardBackgroundColor="#E6D9C7"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textColor="@color/purple_500"
+        android:textSize="18sp"
+        app:cornerRadius="8dp"
+        app:iconGravity="textStart"
+        app:iconTint="@color/purple_500" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <TextView
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:textSize="30sp"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="2.5dp"
-            android:textColor="@color/black"
-            android:paddingBottom="2.5dp" />
-    </com.google.android.material.card.MaterialCardView>
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/forgot_password"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
 
+        <View
+            android:layout_width="1dp"
+            android:layout_height="16dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/white_30" />
+
+        <TextView
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/create_account"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
 </LinearLayout>

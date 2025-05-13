@@ -12,13 +12,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.textfield.TextInputEditText
 import com.zegocloud.uikit.prebuilt.call.ZegoUIKitPrebuiltCallService
 import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationConfig
 import kotlin.math.log
 
 class Login : AppCompatActivity() {
-    private lateinit var usernameEditText: EditText
-    private lateinit var loginBtn: CardView
+    private lateinit var usernameEditText: TextInputEditText
+    private lateinit var loginBtn: MaterialButton
     private lateinit var remme: CheckBox
     private lateinit var sharedPref: SharedPreferences
 
@@ -31,8 +33,6 @@ class Login : AppCompatActivity() {
         usernameEditText = findViewById(R.id.userId)
         loginBtn = findViewById(R.id.Login)
         remme = findViewById(R.id.remme)
-
-
 
         if (sharedPref.getBoolean("checked", false)) {
             startActivity(Intent(this, MainActivity::class.java))
@@ -47,18 +47,16 @@ class Login : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-
             sharedPref.edit().apply {
                 if (remme.isChecked) {
-                    putBoolean("checked", true) // Remember Me enabled
-                    putString("username", username) // Save username
+                    putBoolean("checked", true)
+                    putString("username", username)
                 } else {
-                    putBoolean("checked", false) // Ensure it's reset if unchecked
-                    remove("username") // Remove stored username
+                    putBoolean("checked", false)
+                    remove("username")
                 }
-                     apply()
+                apply()
             }
-
 
             val config = ZegoUIKitPrebuiltCallInvitationConfig()
             ZegoUIKitPrebuiltCallService.init(
@@ -70,7 +68,6 @@ class Login : AppCompatActivity() {
                 config
             )
 
-
             startActivity(Intent(this, MainActivity::class.java).apply {
                 putExtra("username", username)
             })
@@ -78,4 +75,5 @@ class Login : AppCompatActivity() {
         }
     }
 }
+
 

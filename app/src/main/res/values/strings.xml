@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">VidBuddy</string>
+    <string name="app_logo_desc">Application Logo</string>
+    <string name="setup_profile">Set Up Your Profile</string>
+    <string name="username">Username</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="create_account">Create Account</string>
+    <string name="default_username">Guest</string>
+    <string name="calling_status">Calling…</string>
+    <string name="video_call_status">Starting video call…</string>
 </resources>

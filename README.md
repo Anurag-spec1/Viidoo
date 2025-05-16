@@ -4,21 +4,21 @@
 
 🚀 Features
 
-📹 High-quality video calling (ZegoCloud)
+>📹 High-quality video calling (ZegoCloud)
 
-🎙️ Low-latency voice calls
+>🎙️ Low-latency voice calls
 
-💡 Clean XML-based UI
+>💡 Clean XML-based UI
 
 🛠 Tech Stack
 
-Language: Kotlin
+>Language: Kotlin
 
-UI: XML Layouts
+>UI: XML Layouts
 
-Call SDK: ZegoCloud
+>Call SDK: ZegoCloud
 
-Media: ZegoExpressEngine (RTC)
+>Media: ZegoExpressEngine (RTC)
 
 📸 Screenshots
 
